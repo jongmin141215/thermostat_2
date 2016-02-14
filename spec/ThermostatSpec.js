@@ -7,6 +7,11 @@ describe('Thermostst', function(){
 
   it('starts at 20 degrees', function() {
     expect(thermostat.temp).toEqual(20);
+  });
+
+  it('can increase the temperature with the up button', function() {
+    thermostat.increaseTemp();
+    expect(thermostat.temp).toEqual(21);
   })
 });
 // describe("Player", function() {
