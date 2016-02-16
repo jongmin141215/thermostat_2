@@ -13,6 +13,11 @@ describe('Thermostst', function(){
     thermostat.increaseTemp();
     expect(thermostat.temp).toEqual(21);
   })
+
+  it('can decrease the temperature with the down button', function() {
+    thermostat.decreaseTemp();
+    expect(thermostat.temp).toEqual(19);
+  })
 });
 // describe("Player", function() {
 //   var player;
