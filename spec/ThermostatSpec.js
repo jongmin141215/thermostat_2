@@ -38,6 +38,18 @@ describe('Thermostst', function(){
     expect(thermostat.maxTemp).toEqual(25);
   });
 
+  it('cannot go above maximum temperature when powersaving is on', function() {
+    thermostat.temp = 25;
+    thermostat.increaseTemp();
+    expect(thermostat.temp).toEqual(25);
+  });
+
+  it('cannot go above maximum temperature when powersaving is off', function() {
+    thermostat.temp = 32;
+    thermostat.increaseTemp();
+    expect(thermostat.temp).toEqual(32);
+  });
+
   it('can be reset to 20 degrees with the reset button', function() {
     thermostat.temp = 15;
     thermostat.reset();
@@ -60,4 +72,5 @@ describe('Thermostst', function(){
     thermostat.temp = 24
     expect(thermostat.energySaving()).toEqual('yellow');
   });
+
 });
