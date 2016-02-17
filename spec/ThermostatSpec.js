@@ -34,6 +34,9 @@ describe('Thermostst', function(){
     expect(thermostat.maxTemp).toEqual(32);
   });
 
+  it('has a maximum tempature of 25 when powersaving mode is on', function() {
+    expect(thermostat.maxTemp).toEqual(25);
+  })
 });
 
 
