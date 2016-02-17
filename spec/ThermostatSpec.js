@@ -50,6 +50,20 @@ describe('Thermostst', function(){
     expect(thermostat.temp).toEqual(32);
   });
 
+  it('changes the temperature to powersaving maximum temperature with the powersaving button', function() {
+    thermostat.powerSavingToggle();
+    thermostat.temp = 32;
+    thermostat.powerSavingToggle();
+    expect(thermostat.temp).toEqual(25);
+  });
+
+  it('does not change the temperature with the powersaving button when it is below 25', function() {
+    thermostat.powerSavingToggle();
+    thermostat.temp = 23;
+    thermostat.powerSavingToggle();
+    expect(thermostat.temp).toEqual(23);
+  });
+
   it('can be reset to 20 degrees with the reset button', function() {
     thermostat.temp = 15;
     thermostat.reset();
