@@ -29,6 +29,11 @@ describe('Thermostst', function(){
     expect(thermostat.temp).toEqual(10);
   });
 
+  it('has a maximum tempature of 32 when powersaving mode is off', function() {
+    thermostat.powerSavingToggle();
+    expect(thermostat.maxTemp).toEqual(32);
+  });
+
 });
 
 
