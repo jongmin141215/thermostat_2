@@ -3,7 +3,7 @@ describe('Thermostst', function(){
 
   beforeEach(function() {
     thermostat = new Thermostat();
-  })
+  });
 
   it('starts at 20 degrees', function() {
     expect(thermostat.temp).toEqual(20);
@@ -12,13 +12,27 @@ describe('Thermostst', function(){
   it('can increase the temperature with the up button', function() {
     thermostat.increaseTemp();
     expect(thermostat.temp).toEqual(21);
-  })
+  });
 
   it('can decrease the temperature with the down button', function() {
     thermostat.decreaseTemp();
     expect(thermostat.temp).toEqual(19);
-  })
+  });
+
+  it('has a minimum tempature of 10 degrees', function() {
+    expect(thermostat.minTemp).toEqual(10);
+  });
+
+  it('cannot go below 10 degrees', function() {
+    thermostat.temp = 10;
+    thermostat.decreaseTemp();
+    expect(thermostat.temp).toEqual(10);
+  });
+
 });
+
+
+
 // describe("Player", function() {
 //   var player;
 //   var song;

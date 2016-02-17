@@ -1,11 +1,14 @@
 function Thermostat() {
   this.temp = 20;
+  this.minTemp = 10;
 };
 Thermostat.prototype.increaseTemp = function() {
   this.temp ++
 };
 Thermostat.prototype.decreaseTemp = function() {
-  this.temp --
+  if (this.temp > 10) {
+    this.temp --
+  }
 };
 
 // function Player() {
