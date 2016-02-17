@@ -22,6 +22,9 @@ Thermostat.prototype.powerSavingToggle = function() {
     this.maxTemp = 25;
   }
 };
+Thermostat.prototype.reset = function() {
+  this.temp = 20;
+}
 
 // function Player() {
 // }

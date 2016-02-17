@@ -37,6 +37,12 @@ describe('Thermostst', function(){
   it('has a maximum tempature of 25 when powersaving mode is on', function() {
     expect(thermostat.maxTemp).toEqual(25);
   })
+
+  it('can be reset to 20 degrees with the reset button', function() {
+    thermostat.temp = 15;
+    thermostat.reset();
+    expect(thermostat.temp).toEqual(20);
+  })
 });
 
 
