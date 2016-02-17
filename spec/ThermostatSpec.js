@@ -36,13 +36,30 @@ describe('Thermostst', function(){
 
   it('has a maximum tempature of 25 when powersaving mode is on', function() {
     expect(thermostat.maxTemp).toEqual(25);
-  })
+  });
 
   it('can be reset to 20 degrees with the reset button', function() {
     thermostat.temp = 15;
     thermostat.reset();
     expect(thermostat.temp).toEqual(20);
-  })
+  });
+
+  it('displays green when the temperature is below 18', function() {
+    thermostat.temp = 17
+    expect(thermostat.energySaving()).toEqual('green');
+  });
+
+  it('displays red when the temperature is greater than or equal to 25', function() {
+    thermostat.temp = 25;
+    expect(thermostat.energySaving()).toEqual('red');
+  });
+
+  it('displays yellow when the temperature is between 18 and 25', function() {
+    thermostat.temp = 18
+    expect(thermostat.energySaving()).toEqual('yellow');
+    thermostat.temp = 24
+    expect(thermostat.energySaving()).toEqual('yellow');
+  });
 });
 
 

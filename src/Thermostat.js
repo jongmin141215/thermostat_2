@@ -24,7 +24,16 @@ Thermostat.prototype.powerSavingToggle = function() {
 };
 Thermostat.prototype.reset = function() {
   this.temp = 20;
-}
+};
+Thermostat.prototype.energySaving = function() {
+  if (this.temp < 18) {
+    return 'green';
+  } else if (this.temp >= 25) {
+    return 'red';
+  } else {
+    return 'yellow';
+  }
+};
 
 // function Player() {
 // }
